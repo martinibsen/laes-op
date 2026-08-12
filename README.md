@@ -1,29 +1,24 @@
-# claude-skills
+# Læs op
 
-Skills I actually use with [Claude Code](https://claude.com/claude-code), not demos.
+A [Claude Code](https://claude.com/claude-code) skill that reads text aloud in a
+native Danish voice, via ElevenLabs and `afplay`. A skill I actually use, not a demo.
 
 A skill is a folder with a `SKILL.md` in it. The frontmatter says *when* to use it,
 the body says *how*. Claude reads the description, decides it applies, and follows the
 instructions. That is the whole mechanism. No plugin API, no framework, no build step.
 
-| Skill | What it does |
-|---|---|
-| [`laes-op`](laes-op/) | Reads text aloud in a native Danish voice, via ElevenLabs and `afplay` |
-
 ## Install
 
-Clone, then symlink the skills you want into Claude Code's skills directory:
+Clone, then symlink the skill into Claude Code's skills directory:
 
 ```bash
-git clone https://github.com/martinibsen/claude-skills.git ~/Projects/claude-skills
-ln -s ~/Projects/claude-skills/laes-op ~/.claude/skills/laes-op
+git clone https://github.com/martinibsen/laes-op.git ~/Projects/laes-op
+ln -s ~/Projects/laes-op/laes-op ~/.claude/skills/laes-op
 ```
 
 Symlink rather than copy, so `git pull` updates the skill in place.
 
----
-
-## laes-op
+## What it does
 
 Say *"læs det op"*, *"læs det her højt"* or *"read this aloud"*, and Claude strips the
 markdown out of whatever you are looking at and speaks the prose through a real voice.
@@ -35,7 +30,7 @@ macOS only, because it plays audio with `afplay`.
 ### Setup
 
 ```bash
-cd ~/Projects/claude-skills/laes-op && ./setup.sh
+cd ~/Projects/laes-op/laes-op && ./setup.sh
 ```
 
 It asks for an [ElevenLabs api key](https://elevenlabs.io/app/settings/api-keys), fetches
